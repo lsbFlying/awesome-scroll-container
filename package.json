@@ -1,6 +1,6 @@
 {
   "name": "awesome-scroll-container",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
