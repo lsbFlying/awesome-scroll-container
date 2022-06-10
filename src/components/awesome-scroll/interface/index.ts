@@ -42,3 +42,9 @@ export interface Basic<P extends BasicProps = BasicProps, S = {}, SS = any>
  */
 export interface ICSS<T extends ICSSProps = ICSSProps, S = {}, SS = any>
 	extends Basic<T, S, SS> {}
+
+type DOMHighResTimeStamp = number;
+
+export interface FrameRequestCallback {
+	(time: DOMHighResTimeStamp): void;
+}

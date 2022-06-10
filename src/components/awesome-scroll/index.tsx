@@ -1,4 +1,5 @@
 import React from "react";
+import "./shim";
 import { ICSS, AwesomeScrollProps } from "./interface";
 import { ScrollWrap } from "./styled";
 
