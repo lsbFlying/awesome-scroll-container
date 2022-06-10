@@ -5,9 +5,9 @@ const requestFrameShim = () => {
   let browserVendors = ["webkit", "moz"];
   
   for (let i = 0, length = browserVendors.length; i < length && !window.requestAnimationFrame; i++) {
-    window.requestAnimationFrame = window[`${browserVendors[i]}RequestAnimationFrame` as keyof typeof window];
-    window.cancelAnimationFrame = window[`${browserVendors[i]}CancelAnimationFrame` as keyof typeof window] // in webkit
-    || window[`${browserVendors[i]}CancelRequestAnimationFrame` as keyof typeof window];
+    window.requestAnimationFrame = (window as any)[`${browserVendors[i]}RequestAnimationFrame` as keyof typeof window];
+    window.cancelAnimationFrame = (window as any)[`${browserVendors[i]}CancelAnimationFrame` as keyof typeof window] // in webkit
+    || (window as any)[`${browserVendors[i]}CancelRequestAnimationFrame` as keyof typeof window];
   }
   
   if (!window.requestAnimationFrame) {
